@@ -1,0 +1,51 @@
+staff_id,staff_name,position,hire_date,salary
+1,Isaiah Moses,Clerk,2020-05-24,20884.75
+2,Wendy Fisher,Assistant,2015-08-05,78467.12
+3,Julie Nunez,Librarian,2016-03-23,31031.43
+4,Jeffery Hahn,Assistant,2015-12-28,42861.34
+5,Emily Scott,Librarian,2023-10-12,48299.21
+6,Daniel Todd,Clerk,2021-10-11,31071.92
+7,Steven Johnson,Librarian,2016-06-05,66883.64
+8,Christina Santiago,Librarian,2019-11-16,46659.7
+9,Anthony Archer,Assistant,2017-07-21,37485.11
+10,Jenna Bryant,Librarian,2023-05-08,60550.41
+11,Nicholas Rhodes,Librarian,2024-03-30,46780.34
+12,Gary Kennedy,Clerk,2024-06-18,45666.65
+13,Robin Jefferson,Librarian,2021-08-12,62122.57
+14,Jeremy Matthews,Clerk,2019-07-15,38379.76
+15,Dennis Chase,Clerk,2021-11-27,56373.06
+16,Andre Bartlett,Librarian,2017-01-06,71146
+17,Jennifer Howard,Assistant,2022-04-30,25089.46
+18,Allison Morgan,Assistant,2017-11-26,48321.5
+19,Jeanette Morris,Librarian,2025-03-17,50791.87
+20,Mrs. Jenny Mitchell,Assistant,2020-09-24,26172.01
+21,Yesenia Robbins,Assistant,2021-07-12,40082.42
+22,Leslie Holt,Assistant,2019-08-16,69599.41
+23,David Hammond,Librarian,2017-06-24,31092.52
+24,Brandon Larsen,Assistant,2020-02-20,51912.17
+25,Elizabeth Pierce,Librarian,2020-04-17,50627.18
+26,Katherine Roman,Clerk,2020-05-18,74424.74
+27,Leon Davidson,Clerk,2019-12-09,74333.92
+28,Douglas Curry,Clerk,2022-06-14,55546.53
+29,Erin Franklin,Clerk,2018-06-18,58515.71
+30,Riley Vargas,Clerk,2022-12-03,53465.69
+31,Jennifer Sims,Clerk,2019-12-31,56955.77
+32,Janet Munoz,Clerk,2024-04-16,76364.4
+33,Christopher Alvarado,Librarian,2024-11-29,33631.28
+34,Kenneth Brown,Assistant,2016-12-08,34725.64
+35,Michael Mcbride,Librarian,2016-01-07,26026.07
+36,Michael Smith,Assistant,2021-07-10,26919.96
+37,Brandon George,Assistant,2017-09-07,77820.8
+38,Timothy Griffith,Clerk,2022-11-14,56494.95
+39,Linda Brennan,Assistant,2022-04-29,58151.37
+40,Peter Williams,Librarian,2016-10-12,68382.28
+41,Jessica Murillo,Clerk,2016-10-10,66209.26
+42,Andre Ward Jr.,Clerk,2025-05-16,72241.01
+43,Donald Daniel,Assistant,2023-11-27,36534.71
+44,Beth Hernandez,Clerk,2025-03-13,63948.38
+45,Ryan Scott,Librarian,2017-07-08,24081.35
+46,Brandon Edwards,Librarian,2020-10-14,66375.37
+47,Cathy Allen,Clerk,2025-05-16,47741.43
+48,Melissa Miller,Assistant,2017-10-11,57868.31
+49,Michael Vaughn DDS,Clerk,2015-10-02,33533.56
+50,Stephanie Walker,Assistant,2016-07-14,28957.83
