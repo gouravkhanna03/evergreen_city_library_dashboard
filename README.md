@@ -233,6 +233,45 @@ This dashboard helps library management:
 > )
 > ```
 
+
+> ```DAX
+> SVG_BarChart1 = 
+> VAR ProgressValue = SELECTEDVALUE(members_table[completion_progress], 0)
+> VAR BarWidth = 260
+> VAR ProgressWidth = BarWidth * (ProgressValue / 100)
+> VAR SelectColor = "#ea885f"
+> VAR SVG_Data_URL = "data:image/svg+xml;utf8,"
+> VAR SVG =
+>    "<svg width='400' height='40' xmlns='http://www.w3.org/2000/svg'>" &
+>    "<rect x='10' y='10' width='" & BarWidth & "' height='20' rx='10' ry='10' fill='#9e5c40' />" &
+>    "<rect x='10' y='10' width='" & ProgressWidth & "' height='20' rx='10' ry='10' fill='" & SelectColor & "' />" &
+>    "<text x='390' y='25' font-family='helvetica' font-size='37' font-weight='530' fill='#252423' text-anchor='end' alignment-baseline='middle'>" &
+>    FORMAT(ROUND(ProgressValue, 0), "0") & "%" &
+>    "</text>" &
+>    "</svg>"
+> RETURN
+> SVG_Data_URL & SVG
+> )
+> ```
+
+
+> ```DAX
+> ReviewIndexWithinRating = 
+> VAR rRating = SELECTEDVALUE(last_30_days_reviews[rating])
+> VAR rID     = SELECTEDVALUE(last_30_days_reviews[review_id])
+> RETURN
+> 1 +
+> CALCULATE(
+>    COUNTROWS(last_30_days_reviews),
+>    FILTER(
+>        last_30_days_reviews,
+>        last_30_days_reviews[rating] = rRating
+>            && last_30_days_reviews[review_id] < rID
+>    )
+> )
+> ```
+
+
 ---
 ## 👨‍💻 About Me
 
