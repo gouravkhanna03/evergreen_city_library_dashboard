@@ -78,6 +78,8 @@ The dataset represents a complete library ecosystem and includes the following t
 - Button-based navigation between report pages
 - Improves usability and report flow
 
+  ![Page 1 – Navigation](evergreen_city_library_dashboard/dashboard/page_1.png)
+
 ---
 
 ### 📊 **Page 2: Overview**
