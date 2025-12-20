@@ -218,6 +218,21 @@ This dashboard helps library management:
 - Understand member activity
 - Improve decision-making using data
 
+## 📊 Power BI DAX Highlights
+
+> ```DAX
+> TotalReviewsByMember = 
+> VAR SelectedMember =
+>    SELECTEDVALUE(last_30_days_reviews[member_name])
+> RETURN
+> CALCULATE(
+>   COUNTROWS(last_30_days_reviews),
+>   FILTER(
+>      ALL(last_30_days_reviews),
+>      last_30_days_reviews[member_name] = SelectedMember
+> )
+> ```
+
 ---
 ## 👨‍💻 About Me
 
