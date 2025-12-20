@@ -94,6 +94,8 @@ The dataset represents a complete library ecosystem and includes the following t
 - Matrix: Weekly Loan Distribution (busy weeks/months)
 - Genre slicer applied only to Top Authors
 
+  ![Page 2 – Overview](dashboard/page_2.png)
+
 ---
 
 ### 📦 **Page 3: Inventory**
@@ -105,6 +107,8 @@ The dataset represents a complete library ecosystem and includes the following t
 - Bar Chart: Loans by Published Year with target KPI
 - Bar + Line Chart: Genre vs Loan Count & Avg Price
 - KPI Card: Selected book availability
+
+  ![Page 3 – Inventory](dashboard/page_3.png)
 
 ---
 
@@ -119,6 +123,8 @@ The dataset represents a complete library ecosystem and includes the following t
 - What-If parameter to check requested book availability
 - Gauge & KPI showing availability result
 
+  ![Page 4 – Members](dashboard/page_4.png)
+
 ---
 
 ### ⭐ **Page 5: Insights & Reviews**
@@ -131,6 +137,8 @@ The dataset represents a complete library ecosystem and includes the following t
 - Interactive review navigation using bookmarks
 - KPI cards showing recent reviews with star icons
 - Donut Charts: Highest and lowest review months
+
+  ![Page 5 – Insights & Reviews](dashboard/page_5.png)
 
 ---
 
