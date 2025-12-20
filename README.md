@@ -146,16 +146,48 @@ The dataset represents a complete library ecosystem and includes the following t
 The following **SQL VIEWS** were created in PostgreSQL and imported into Power BI:
 
 ```sql
-CREATE OR REPLACE VIEW book_inventory_status AS
-SELECT
-  b.book_id,
-  b.title,
-  b.stock,
-  COUNT(bl.loan_id) FILTER (WHERE bl.return_date IS NULL) AS active_loans,
-  b.stock - COUNT(bl.loan_id) FILTER (WHERE bl.return_date IS NULL) AS available_copies
-FROM books b
-LEFT JOIN book_loans bl ON b.book_id = bl.book_id
-GROUP BY b.book_id, b.title, b.stock;
+CREATE OR REPLACE VIEW kpi_cards AS
+WITH kpi_cards AS(
+	SELECT COUNT(*) AS total_loans,
+				 COUNT(*) FILTER (WHERE return_date IS NOT NULL) AS returned_loans,
+				 COUNT(*) FILTER (WHERE return_date IS NULL) AS active_loans,
+				 COUNT(*) FILTER (
+				   WHERE (return_date IS NOT NULL AND return_date > due_date)
+				      OR (return_date IS NULL AND due_date < CURRENT_DATE)) AS overdue_loans
+	FROM book_loans 
+),
+revenue AS (
+	SELECT SUM(amount) AS total_revenue
+	FROM payments
+),
+book_stocks AS(
+	SELECT SUM(stock) AS total_stocks,
+	       COUNT(*) AS total_books
+	FROM books
+),
+staffs AS (
+	SELECT COUNT(*) AS total_staff,
+				ROUND(AVG(salary),2 ) AS avg_salary
+	FROM staff
+),
+average_rating AS (
+	SELECT ROUND(AVG(rating), 2) AS avg_rating,
+	       COUNT(reviews) AS total_reviews
+	FROM reviews
+)
+SELECT total_loans,
+       returned_loans,
+			 active_loans,
+			 overdue_loans,
+			 ROUND((overdue_loans::decimal / total_loans)*100, 2) AS overdue_in_percent,
+			 total_revenue,
+			 (total_stocks - active_loans) AS available_copies,
+			 total_books,
+			 total_staff,
+			 avg_salary,
+			 avg_rating,
+			 total_reviews
+FROM kpi_cards, revenue, book_stocks, staffs, average_rating;
 ```
 
 ---
@@ -185,3 +217,21 @@ This dashboard helps library management:
 - Manage inventory efficiently
 - Understand member activity
 - Improve decision-making using data
+
+---
+## 👨‍💻 About Me
+
+Hi, I’m **Gaurav Khanna**, a Data Analyst passionate about turning complex data into simple, impactful insights.  
+Skilled in **Power BI, SQL, Excel, and Python**, I love building dashboards that tell a story and uncover hidden trends.
+
+
+## 🤝 Connect with Me
+
+🌐 **Portfolio:** [https://gouravkhanna03.github.io/portfolio/]  
+💼 **LinkedIn:** [[your LinkedIn profile](https://www.linkedin.com/in/gauravkhanna03/)]  
+📧 **Email:** [gouravkhanna03@gmail.com]
+
+
+## 🔖 Keywords
+
+`Power BI` `SQL` `Data Analytics` `Library Dashboard` `Python` `Data Visualization` `ETL` `Data Cleaning` `Storytelling with Data` `Dashboard Design` `SQL` `PBI Dashboard`
