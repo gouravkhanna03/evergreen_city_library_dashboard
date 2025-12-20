@@ -6,17 +6,17 @@
 
 ## 🧩 Project Overview
 
-This project simulates how a real library system can use data to monitor daily operations and improve decision-making.
+This project simulates how a real library system can utilise data to monitor daily operations and enhance decision-making—showcasing a realistic, business-ready dashboard that a library manager can use daily.
 
-I built the project end-to-end — from **SQL data modeling and views** to **interactive Power BI dashboards** — to answer key business questions like:
+
+
+📊 **Goal:**  
+I built the project end-to-end — from **SQL data modelling and views** to **interactive Power BI dashboards** — to answer key business questions like:
 - Which books and authors are most in demand?
 - How many books are overdue and why?
 - Is inventory sufficient to meet demand?
 - How active and valuable are library members?
 - How do reviews and ratings reflect book quality?
-
-📊 **Goal:**  
-Create a realistic, business-ready dashboard that a library manager can use daily.
 
 ---
 
@@ -24,11 +24,14 @@ Create a realistic, business-ready dashboard that a library manager can use dail
 
 | Tool | Purpose |
 |------|--------|
+| 🐙 **Excel** | Data Audit & Data Preparation |
 | 🗃️ **PostgreSQL** | Data storage, joins, aggregations, SQL Views |
 | 📊 **Power BI** | Data modeling, DAX, dashboard visualization |
 | 🧮 **DAX** | KPIs, measures, parameters, logic |
+| 🐙 **Figma** | Dashboard UI/UX |
 | ☁️ **Power BI Service** | Publishing & scheduled refresh |
 | 🐙 **GitHub** | Project documentation & portfolio |
+
 
 ---
 
@@ -49,7 +52,7 @@ The dataset represents a complete library ecosystem and includes the following t
 | **staff** | Staff position and salary |
 
 📊 **Total Rows:** ~21,000+ across all tables  
-📅 **Time-based analysis** enabled using a calendar table
+📅 **Time Range:** 2022-2025
 
 ---
 
