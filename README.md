@@ -1,112 +1,149 @@
-# 📚 Library Management Analytics Dashboard
-**Power BI | PostgreSQL | End-to-End BI Project**
+# 📚 Library Management Analytics Dashboard (End-to-End Power BI Project)
+
+> A complete **data analytics project** built using **PostgreSQL and Power BI**, designed to analyze library operations — book loans, inventory, members, payments, reviews, and staff insights.
 
 ---
 
-## 🔹 Project Overview
-This is an end-to-end **Library Analytics Dashboard** built using **PostgreSQL and Power BI**.
+## 🧩 Project Overview
 
-The project analyzes:
-- Book loans and overdues
-- Inventory availability and stock risk
-- Member activity and revenue
-- Reviews, ratings, and staff insights
+This project simulates how a real library system can use data to monitor daily operations and improve decision-making.
 
-All data is stored in PostgreSQL and visualized in Power BI using SQL Views and DAX.
+I built the project end-to-end — from **SQL data modeling and views** to **interactive Power BI dashboards** — to answer key business questions like:
+- Which books and authors are most in demand?
+- How many books are overdue and why?
+- Is inventory sufficient to meet demand?
+- How active and valuable are library members?
+- How do reviews and ratings reflect book quality?
 
----
-
-## 🔹 Source Data (PostgreSQL Tables)
-The dataset comes from the following tables:
-
-- **books** (book details, price, stock)
-- **authors** (author name, nationality)
-- **genres** (genre names)
-- **book_loans** (loan, due date, return date, fine)
-- **payments** (member payments and types)
-- **reservations** (book reservation status)
-- **members** (member details and membership type)
-- **reviews** (ratings and comments)
-- **staff** (staff position and salary)
+📊 **Goal:**  
+Create a realistic, business-ready dashboard that a library manager can use daily.
 
 ---
 
-## 🔹 Data Preparation (SQL)
-- Data was exported into **PostgreSQL**
-- Multiple **SQL VIEWS** were created to:
-  - Join related tables
-  - Aggregate data for KPIs
-  - Improve Power BI performance
-  - Simplify data modeling
-- Power BI connects only to **SQL Views**, not raw tables
-- A **Calendar (Date) table** was created for time analysis
+## ⚙️ Tech Stack
+
+| Tool | Purpose |
+|------|--------|
+| 🗃️ **PostgreSQL** | Data storage, joins, aggregations, SQL Views |
+| 📊 **Power BI** | Data modeling, DAX, dashboard visualization |
+| 🧮 **DAX** | KPIs, measures, parameters, logic |
+| ☁️ **Power BI Service** | Publishing & scheduled refresh |
+| 🐙 **GitHub** | Project documentation & portfolio |
 
 ---
 
-## 🔹 Dashboard Pages & Explanation
+## 🧮 Dataset Overview
 
-### 🧭 Page 1: Navigation
-**Purpose:** Easy report navigation  
-- Custom library-themed background
-- Buttons to move between dashboard pages
-- Improves user experience
+The dataset represents a complete library ecosystem and includes the following tables:
+
+| Table | Description |
+|------|-------------|
+| **books** | Book details, price, and stock |
+| **authors** | Author names and nationality |
+| **genres** | Book genres |
+| **book_loans** | Loan, due date, return date, and fines |
+| **payments** | Member payments and payment types |
+| **reservations** | Book reservation status |
+| **members** | Member details and membership type |
+| **reviews** | Book ratings and comments |
+| **staff** | Staff position and salary |
+
+📊 **Total Rows:** ~21,000+ across all tables  
+📅 **Time-based analysis** enabled using a calendar table
 
 ---
 
-### 📊 Page 2: Overview
-**Problem solved:** Understand overall library performance quickly
+## 🧹 Data Processing Workflow
 
-**Visuals used:**
-- KPI Cards: Total Loans, Active Loans, Returned Loans
-- KPI Cards: Overdue Loans & Overdue %
-- KPI Card: Total Revenue
+### Key Steps:
+1. Exported data into **PostgreSQL**
+2. Created **SQL VIEWS** to:
+   - Join related tables
+   - Perform aggregations
+   - Optimize Power BI performance
+3. Built a **Calendar table** for time intelligence
+4. Imported SQL Views into Power BI
+5. Created DAX measures for KPIs and logic
+6. Designed interactive dashboards
+
+---
+
+## 📈 Dashboard Overview
+
+### 🧭 **Page 1: Navigation**
+- Custom library-themed landing page
+- Button-based navigation between report pages
+- Improves usability and report flow
+
+---
+
+### 📊 **Page 2: Overview**
+**Purpose:** Quick understanding of overall library performance
+
+- KPIs: Total Loans, Active Loans, Returned Loans
+- KPIs: Overdue Loans & Overdue %
+- KPI: Total Revenue (Payments)
 - Line Chart: Loans by Month (Year slicer)
 - Donut Chart: Membership Type distribution
 - Bar Chart: Top 5 Authors
-- Matrix: Weekly Loan Distribution (Months vs Weeks)
-- Slicer: Genre (works only for Top 5 Authors)
+- Matrix: Weekly Loan Distribution (busy weeks/months)
+- Genre slicer applied only to Top Authors
 
 ---
 
-### 📦 Page 3: Inventory
-**Problem solved:** Track book availability and stock risk
+### 📦 **Page 3: Inventory**
+**Purpose:** Inventory control and stock risk monitoring
 
-**Visuals used:**
-- KPI Cards: Available Copies, Stock Out Risk %
+- KPIs: Available Copies, Stock-Out Risk %
 - Table: Book stock, active loans, reservations, next available date
-- Conditional formatting for stock risk levels
-- Bar Chart: Loans by Published Year (with target KPI)
+- Conditional formatting highlights stock risk
+- Bar Chart: Loans by Published Year with target KPI
 - Bar + Line Chart: Genre vs Loan Count & Avg Price
-- KPI Card: Selected Book & Available Copies
+- KPI Card: Selected book availability
 
 ---
 
-### 👥 Page 4: Members
-**Problem solved:** Analyze member behavior and revenue
+### 👥 **Page 4: Members**
+**Purpose:** Member activity and revenue insights
 
-**Visuals used:**
-- KPI Cards: New Members (6 months), Avg Revenue per Member, Total Members
+- KPIs: New Members (6 months), Avg Revenue per Member, Total Members
 - Clustered Column Chart: Membership growth
 - Stacked Column Chart: Payments by type
-- Stacked Bar Chart: Average Rating per Genre
 - Donut Chart: Payments by category
 - Table: Member activity with progress bar
-- What-If parameter to check book quantity availability
-- KPI & Gauge showing availability result
+- What-If parameter to check requested book availability
+- Gauge & KPI showing availability result
 
 ---
 
-### ⭐ Page 5: Insights & Reviews
-**Problem solved:** Understand quality, reviews, and staff insights
+### ⭐ **Page 5: Insights & Reviews**
+**Purpose:** Quality, reviews, and staff analysis
 
-**Visuals used:**
-- KPI Cards: Total Staff, Avg Salary, Total Reviews, Avg Rating
+- KPIs: Total Staff, Avg Salary, Total Reviews, Avg Rating
 - Line + Stacked Column Chart: Rating vs Loans by Genre
 - Area Chart: Staff by Position
-- Star Rating slicer (1–5)
-- Interactive review navigation using arrows & bookmarks
-- KPI Cards showing last 30 days reviews with star icons
-- Donut Charts: Highest and Lowest review months
+- Star rating slicer (1–5)
+- Interactive review navigation using bookmarks
+- KPI cards showing recent reviews with star icons
+- Donut Charts: Highest and lowest review months
+
+---
+
+## 📊 Sample SQL Views
+The following **SQL VIEWS** were created in PostgreSQL and imported into Power BI:
+
+```sql
+CREATE OR REPLACE VIEW book_inventory_status AS
+SELECT
+  b.book_id,
+  b.title,
+  b.stock,
+  COUNT(bl.loan_id) FILTER (WHERE bl.return_date IS NULL) AS active_loans,
+  b.stock - COUNT(bl.loan_id) FILTER (WHERE bl.return_date IS NULL) AS available_copies
+FROM books b
+LEFT JOIN book_loans bl ON b.book_id = bl.book_id
+GROUP BY b.book_id, b.title, b.stock;
+```
 
 ---
 
